@@ -1,5 +1,7 @@
 package com.tweeteroo.apitweeteroo.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,5 +18,16 @@ public class UserService {
 
   public void save(@RequestBody UserDTO req) {
     repository.save(new UserModel(req));
+  }
+
+  public List<UserModel> getAvatar(String username) {
+    List<UserModel> users = repository.findAll();
+    List<UserModel> userSelected = new ArrayList<UserModel>();
+    users.forEach(user -> {
+      if(user.getUsername().equals(username)){
+        userSelected.add(user);
+      }
+    }); 
+    return userSelected; 
   }
 }
