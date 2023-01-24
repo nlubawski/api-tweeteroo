@@ -7,8 +7,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Data
 @Entity 
+@NoArgsConstructor
 public class TweetModel {
   public TweetModel(TweetDTO tweet){
     this.username = tweet.username();

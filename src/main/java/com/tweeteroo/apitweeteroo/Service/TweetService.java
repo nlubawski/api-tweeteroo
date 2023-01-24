@@ -1,5 +1,7 @@
 package com.tweeteroo.apitweeteroo.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,5 +18,10 @@ public class TweetService {
 
   public void save(@RequestBody TweetDTO req) {
     repository.save(new TweetModel(req));
+  }
+
+  public List<TweetModel> getTweetByUsername(String username){
+    List<TweetModel> tweets =  repository.findAll();
+    return tweets;
   }
 }
