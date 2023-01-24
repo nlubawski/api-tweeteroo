@@ -14,7 +14,7 @@ import lombok.Data;
 public class UserModel {
 
   public UserModel(UserDTO user){
-    this.username = user.name();
+    this.username = user.username();
     this.avatar = user.avatar();
   }
 

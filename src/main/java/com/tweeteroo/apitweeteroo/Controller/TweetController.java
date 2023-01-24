@@ -21,6 +21,6 @@ public class TweetController {
   @ResponseStatus(code = HttpStatus.CREATED) 
   @PostMapping
     public void create(@RequestBody TweetDTO req) {
-      
+      service.save(req);
   }
 }
