@@ -14,7 +14,7 @@ import lombok.Data;
 public class UserModel {
 
   public UserModel(UserDTO user){
-    this.name = user.name();
+    this.username = user.name();
     this.avatar = user.avatar();
   }
 
@@ -23,7 +23,7 @@ public class UserModel {
   private Long id;
   
   @Column(length = 200, nullable = false)
-  private String name;
+  private String username;
 
   @Column(length = 200, nullable = false)
   private String avatar;
