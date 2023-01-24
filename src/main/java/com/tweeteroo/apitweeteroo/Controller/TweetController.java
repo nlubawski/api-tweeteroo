@@ -9,16 +9,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tweeteroo.apitweeteroo.Dto.TweetDTO;
+import com.tweeteroo.apitweeteroo.Service.TweetService;
 
 @RestController
 @RequestMapping("api/tweets")
 public class TweetController {
   
-
+  @Autowired
+  private TweetService service;
 
   @ResponseStatus(code = HttpStatus.CREATED) 
   @PostMapping
     public void create(@RequestBody TweetDTO req) {
-
+      
   }
 }
