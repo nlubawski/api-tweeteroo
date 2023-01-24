@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tweeteroo.apitweeteroo.Dto.TweetDTO;
+import com.tweeteroo.apitweeteroo.Model.TweetCompleteModel;
 import com.tweeteroo.apitweeteroo.Model.TweetModel;
 import com.tweeteroo.apitweeteroo.Service.TweetService;
 
@@ -33,7 +34,7 @@ public class TweetController {
 
   @ResponseStatus(code = HttpStatus.OK) 
   @GetMapping("/{username}")
-    public List<TweetModel> getTweetByUsername(@PathVariable String username) {
+    public List<TweetCompleteModel> getTweetByUsername(@PathVariable String username) {
       return service.getTweetByUsername(username);
   }
 }

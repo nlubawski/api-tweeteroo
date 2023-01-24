@@ -20,7 +20,7 @@ public class UserService {
     repository.save(new UserModel(req));
   }
 
-  public List<UserModel> getAvatar(String username) {
+  public String getAvatar(String username) {
     List<UserModel> users = repository.findAll();
     List<UserModel> userSelected = new ArrayList<UserModel>();
     users.forEach(user -> {
@@ -28,6 +28,8 @@ public class UserService {
         userSelected.add(user);
       }
     }); 
-    return userSelected; 
+
+    return userSelected.get(0).getAvatar();
+    
   }
 }
