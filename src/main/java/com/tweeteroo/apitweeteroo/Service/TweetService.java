@@ -1,5 +1,6 @@
 package com.tweeteroo.apitweeteroo.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class TweetService {
 
   public List<TweetModel> getTweetByUsername(String username){
     List<TweetModel> tweets =  repository.findAll();
-    return tweets;
+    List<TweetModel> tweetsUser = new ArrayList<TweetModel>();
+    tweets.forEach(tweet -> {
+      if(tweet.getUsername().equals(username)){
+        tweetsUser.add(tweet);
+      }
+    }); 
+    return tweetsUser;    
   }
 }
