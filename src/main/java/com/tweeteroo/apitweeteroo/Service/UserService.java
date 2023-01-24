@@ -28,8 +28,10 @@ public class UserService {
         userSelected.add(user);
       }
     }); 
-
     return userSelected.get(0).getAvatar();
-    
+  }
+
+  public List<UserModel> getAllUsers(){
+    return repository.findAll();
   }
 }
